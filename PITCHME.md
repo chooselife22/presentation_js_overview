@@ -1,110 +1,113 @@
-### Ziel des Vortrags
+# JavaScript
+### Stand 2017
 
-* Überblick Javascript
-* ECMAscript
-* Versionierung
+---
 
-## State of JS 2016
+### Worum geht`s?
 
-* https://www.youtube.com/watch?v=5NIL3Epadj0
-* Jack Franklin treats us to his talk on 'The State of JavaScript', where he explores, discusses and criticises the current state of web development with JavaScript.
+* JavaScript Web Development - Stand 2017 und davor
+* ECMAscript - Es gibt doch einen Standard ... oder?
+* Welche JS-Tools brauche ich überhaupt?
+* Beispiel: Webpack
 
-### Content
+---
 
-* More and more APIs
-* Working in the browser without libaries
+### JS entwickelt sich weiter
 
-### NodeJS
+* Von Utility-Bibliotheken (lodash, underscore, sugar, uvm.) zu nativer Unterstützung
+* JS-Müdigkeit: ständig neue Tools und Frameworks
+  * Frameworks, Transpilers, Package Management, Task-runner
 
-* BOOMING
-* exposing a lot more people to javascript
-* Browsers building native support for library-features (document.querySelectorAll, =>, ...)
-  * Features make it back into the language
+---
 
-### Two-Way-Data Binding (Example)
+### Hot Topics
 
-* Dirty Checking (done by frameworks) (every few (milli)seconds checking for updates on both sides)
-  * Not performant, dirty ...
-* We need something native
-  * Object.observe
+* Dirty Checking
+  * Alle paar Millisekunden wird auf beiden Seiten auf Änderungen geprüft
+* Shadow DOM, Virtual DOM Representation
+* Aktuelle Frameworks gehen von MVC/MVVM/MVWHATEVER zu Web-Components
+  * https://medium.com/this-dot-labs/building-modern-web-applications-in-2017-791d2ef2e341
 
-### Framework Competition
-Example Virtual-DOM-Implementation
-* React
-* Ember -> Glimmer
-* Angular
-* Everyone has something like it
-
-### Moving from MVC/MVVM/MVWHATEVER to Components
-
-* https://medium.com/this-dot-labs/building-modern-web-applications-in-2017-791d2ef2e341
-* Angular 1.5 moved heavily to Components
-* Ember 2 removed controllers
-* React only has Components
+---
 
 ### Web-Components
 
-* Elements with HTML, CSS, JS
-  * All Code in one "Element"
+* Elemente mit HTML, CSS, JS
+  * Der ganze Code in einem Element (<my-component>)
   * Scoped CSS
-* Browser-Support "Patchy"
-  * Polyfills to fill the Gaps
+* Browser nicht 100%ig unterstützt
+  * Polyfills
 * https://blog.pusher.com/realtime-web-components/
+
+---
+
+### ECMAscript
+
+> ECMAScript (or ES) is a trademarked scripting-language specification standardized by Ecma International in ECMA-262 and ISO/IEC 16262. It was created to standardize JavaScript, so as to foster multiple independent implementations.
+
+---
 
 ### ES2015/ES6
 
-* Feature-heavy mess
-* Tons of new features +50
-* no one had a clue whats going on
-* Some Features are cool
-  * Promises
-  * let
-  * Arrow functions
-  * class
-* some not
-  * const not "can not cange"
-    * const is just a binding
+* Vielzahl von Änderungen (mehr als 50 neue Features)
+* z.B. Promises, let, Arrow functions, class
+
+---
 
 ### ES2016/ES7
 
-* 2 Features
-  * Array.protype.includes (check if array includes object/primitive)
-    * Should be called contains...
-      * But MooTools allready implemented a method with this name LoL (Backwards Compatibility)
-  * Exponatiation Operator** (2 ** 8)
+* Zwei neue Features
+  * Array.protype.includes (check ob ein array ein object/primitive enthält)
+    * Sollte eigentlich contains heißen
+      * Aber MooTools hat bereits eine Methode mit dem gleichen Namen implementiert
+      * Wegen Abwärtskompatibilität includes genannt
+  * Exponatiation Operator ** (2 ** 8)
 
-### Process for Accepting new feautures
+---
 
-* Who designs ECMAscript? -> TC39 (Technical Committee 39)
-  * http://www.ecma-international.org/memento/TC39.htm
+### ES Weiterentwicklung mit standardisiertem Prozess
 
-* anyone can propose a feature
-* process introduced because ES2015 was to feature-heavy
-* features goes through stages (tc39 process) happens on github (all public)
-  * http://2ality.com/2015/11/tc39-process.html
+* Wer entwickelt ECMAscript? -> [TC39 (Technical Committee 39)](http://www.ecma-international.org/memento/TC39.htm)
+* Prozess eingeführt weil ES2015 zu viele Features hatte und zu unübersichtlich war
+* Vier Stages (alles public, jeder kann einreichen)
+  * Stage 0 (erste Idee) bis Stage 4 (von mehr als zwei Browsern implementiertes Feature) http://2ality.com/2015/11/tc39-process.html
+* Features die im Januar in Stage 4 sind kommen in die neue Version von ECMAscript
 
-* Every year in january, every feature that is in the last stage (two browser have to implement the feature) will be in the next version of ECMAscript
+---
 
 ### ES2017/ES8
 
-*
+* https://hackernoon.com/es8-was-released-and-here-are-its-main-new-features-ee9c394adf66
+* Async functions, String padding, Object.values, Object.entries, Object.getOwnPropertyDescriptors, Trailing commas in function parameter lists and calls, Shared memory and atomics
+* Browser Support https://kangax.github.io/compat-table/esnext/
+
+---
+
+### Browser Support ES6
+
+<iframe src='http://kangax.github.io/compat-table/es6/' width="800" height="500">
+---
+
+### Browser Support ES7,ES8,ESNext
+
+* ES7+ http://kangax.github.io/compat-table/es2016plus/
+* ES Next (alles was im Prozess zu finden ist) http://kangax.github.io/compat-table/esnext/
+
+---
 
 ### Transpilers
 
-* Babel
-  * Taken the world by storm :D Unavoidable
-  * Let us take code that doesnt run in all browsers and builds code that run in all browsers
-* Do we need Transpilers?
-  * All Browsers have more than 90% Support for ES2015 features
-  * But Answer depends on Target (Multiple Browsers or only one)
+* compile-to-JS Sprachen
+  * Machen aus Code der nicht in allen Browsern läuft Code der in allen Browsern läuft
+* Anscheinend gehts nicht ohne
+* Braucht man das?
+  * Alle modernen Browsern haben fast 100% Support für ES6 Features
+  * Hängt stark davon ob für welche Browser/Systeme man entwickelt
   * https://medium.freecodecamp.org/you-might-not-need-to-transpile-your-javascript-4d5e0a438ca
-* https://kangax.github.io/compat-table/es6/
+* CoffeeScript, TypeScript, Babel, Traceur
 
-### Node
+---
 
-* Modulesystem ersetzt require.js, common.js, ...
-* Modules in verschiedenen Formaten (da geschrieben als require.js module, common.js module, ... )
-* Ziel: ES Modules in allen Browsern als Standard
 
 ### ES Modules
 
@@ -144,13 +147,17 @@ Includiert im komprimierten JS:
 ```
 * https://rollupjs.org/ -> Bundle für ES Modules
 
-### Tooling
+### Node
 
-* JS-Fatigue: ständig neue Tools und Frameworks -> es ist hart mitzuhalten
-* Frameworks: ...
-* Package Management: Browserfy, Webpack, JSPM
-* Transpilers: Babel, Traceur
-* Task-runner: gulp, grunt, ...
+* Modulesystem ersetzt require.js, common.js, ...
+* Modules in verschiedenen Formaten (da geschrieben als require.js module, common.js module, ... )
+* Ziel: ES Modules in allen Browsern als Standard
+
+---
+
+### Webpack
+
+---
 
 ### Progressive Web-Apps https://developers.google.com/web/progressive-web-apps/
 
@@ -163,6 +170,8 @@ Includiert im komprimierten JS:
 
 * Ziel: Besser sein als native Anwendungen
 
+---
+
 ### Zusammenfassung
 
 * ECMAscript entwickelt sich hin zu Standards und Versionierungs-Prozessen
@@ -171,4 +180,3 @@ Includiert im komprimierten JS:
 * Nicht verrückt machen lassen von den vielen Tools
 * Eigenes Toolkit finden
 * Gespannt sein auf neue ES versionen
-
