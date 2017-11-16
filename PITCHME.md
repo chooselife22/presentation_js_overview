@@ -210,6 +210,8 @@ console.log(diag(4, 3)); // 5
 * Eigenes Toolkit finden
 * Gespannt sein auf neue ES versionen (und selbst submitten :D)
 
+---
+
 ## Links
 
 * RAIL Performance Model - https://developers.google.com/web/fundamentals/performance/rail
